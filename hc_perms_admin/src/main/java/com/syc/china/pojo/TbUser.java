@@ -18,7 +18,7 @@ public class TbUser {
 
   private String password;
 
-  private Integer tel;
+  private Integer phone;
 
   private Integer idCard;
 

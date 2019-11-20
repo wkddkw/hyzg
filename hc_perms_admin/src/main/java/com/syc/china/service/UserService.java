@@ -29,14 +29,14 @@ public class UserService {
 
     }
 
-    public List<TbUser> selectAllByCondition(String name, Integer tel, Integer idCard) {
+    public List<TbUser> selectAllByCondition(String name, Integer phone, Integer idCard) {
         Example example=new Example(TbUser.class);
         Example.Criteria criteria = example.createCriteria();
         if (!StringUtils.isBlank(name)){
             criteria.andLike("name","%"+name+"%");
         }
-        if (tel!=null){
-            criteria.andEqualTo("tel",tel);
+        if (phone!=null){
+            criteria.andEqualTo("phone",phone);
         }
         if (idCard!=null){
             criteria.andEqualTo("idCard",idCard);
@@ -47,5 +47,9 @@ public class UserService {
 
     public void deleteUser(Integer did) {
         userMapper.deleteByPrimaryKey(did);
+    }
+
+    public void changeRole(Integer uid, Integer rid) {
+            userMapper.changeRole(uid,rid);
     }
 }
