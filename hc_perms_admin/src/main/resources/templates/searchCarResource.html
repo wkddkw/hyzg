@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <title>用户信息</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<!--<include/>-->
+<!--th:substituteby包含index.html页面的名为logout的fragment片段-->
+<shiro:user>
+    欢迎[<shiro:principal/>]登录,<a href="/logout">退出</a>
+</shiro:user>
+
+<shiro:authenticated>
+    用户[<shiro:principal/>]已身份验证
+</shiro:authenticated>
+
+<shiro:notAuthenticated>
+    未身份验证
+</shiro:notAuthenticated>
+
+<shiro:hasRole name="企业车主">
+    用户[<shiro:principal/>]拥有角色 企业车主
+</shiro:hasRole>
+
+<shiro:hasRole name="个人车主">
+    用户[<shiro:principal/>]拥有角色 个人车主
+</shiro:hasRole>
+
+<shiro:hasRole name="代理货主">
+    用户[<shiro:principal/>]拥有角色 代理货主
+</shiro:hasRole>
+<shiro:hasPermission name="search_car_resource">
+    用户[<shiro:principal/>]拥有权限 search_car_resource
+</shiro:hasPermission>
+<shiro:lacksPermission name="aaa">
+    用户[<shiro:principal/>]没有权限 aaa
+</shiro:lacksPermission>
+
+
+
+<p><a href="/index" th:href="@{/index}">返回首页</a></p>
+
+<p><a  href="#" >管理博客</a></p>
+</body>
+</html>

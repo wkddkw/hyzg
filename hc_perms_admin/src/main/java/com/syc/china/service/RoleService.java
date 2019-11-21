@@ -24,4 +24,14 @@ public class RoleService {
         }
         return roles;
     }
+
+    public List<TbRole> getRolesByRid(Integer roleId) {
+        TbRole role=new TbRole();
+        role.setId(roleId);
+        List<TbRole> roles = roleMapper.select(role);
+        if (CollectionUtils.isEmpty(roles)){
+            return null;
+        }
+        return roles;
+    }
 }

@@ -2,8 +2,10 @@ package com.syc.china.pojo;
 
 
 import lombok.Data;
+import org.apache.shiro.authz.permission.InvalidPermissionStringException;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -47,5 +49,11 @@ public class TbUser {
   private java.sql.Timestamp lastUpdateTime;
 
   private Integer isVip;
+
+  @Transient
+  private List<TbRole> roles;
+
+  @Transient
+  private List<TbPerm> perms;
 
 }

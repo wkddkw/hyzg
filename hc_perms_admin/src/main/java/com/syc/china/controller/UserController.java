@@ -2,11 +2,17 @@ package com.syc.china.controller;
 
 import com.syc.china.pojo.TbUser;
 import com.syc.china.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.AuthorizationException;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.management.relation.Role;
 import java.util.List;
 
 /**
@@ -46,6 +52,11 @@ public class UserController {
     @PutMapping("/changeRole")
     public void changeRole(Integer uid,Integer rid){
         userService.changeRole(uid,rid);
+    }
+
+    @GetMapping("/try")
+    public ModelAndView tryIN(){
+        return new ModelAndView("first");
     }
 
 }

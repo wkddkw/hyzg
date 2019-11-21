@@ -5,6 +5,7 @@ import com.syc.china.pojo.TbUser;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
@@ -51,5 +52,15 @@ public class UserService {
 
     public void changeRole(Integer uid, Integer rid) {
             userMapper.changeRole(uid,rid);
+    }
+
+    public TbUser selectByUsername(String username) {
+        TbUser user=new TbUser();
+        user.setName(username);
+        List<TbUser> select = userMapper.select(user);
+        if (!CollectionUtils.isEmpty(select)){
+            return select.get(0);
+        }
+        return null;
     }
 }
