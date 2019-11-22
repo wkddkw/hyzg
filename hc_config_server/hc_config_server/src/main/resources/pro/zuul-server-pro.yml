@@ -1,0 +1,12 @@
+server:
+  port: 8763
+
+#网关配置....
+#zuul:
+zuul:
+  retryable: true
+  routes:
+    port-server: /user/** # 将商品微服务映射到/item/**
+  ignored-patterns: /upload/**
+  ignored-services:
+    - upload-service

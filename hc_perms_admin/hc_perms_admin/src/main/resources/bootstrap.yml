@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: perms-server
+  profiles:
+    active: pro #对应的是某个(3种)环境的配置文件
+  cloud:
+    config:
+      discovery:
+        service-id: config-server #指定配置中心的服务名称
+        enabled: true
+      fail-fast: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:8761/eureka/
+#actuator设置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有端点,默认是info和health
+  endpoint:
+    health:
+      show-details: always #默认是never
