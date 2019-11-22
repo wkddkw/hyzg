@@ -1,0 +1,25 @@
+server:
+  port: 8767
+
+  #数据库的连接配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/hyzg
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  #rabbitmq:
+    #host: 192.168.188.110
+    #username: wlkg
+    #password: 123456
+    #virtual-host: /wlkg
+    #template:
+      #retry:
+        #enabled: true
+        #initial-interval: 10000ms
+        #max-interval: 300000ms
+        #multiplier: 2
+      #exchange: wlkg.item.exchange
+    #publisher-confirms: true # 生产者确认机制，确保消息会正确发出。如果发送失败会有错误回执，从而触发重试
