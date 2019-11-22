@@ -21,6 +21,10 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
+    /**
+     * 获取所有的角色
+     * @return
+     */
     @GetMapping("/getRoles")
     public ResponseEntity<List<TbRole>> getRoles(){
        List<TbRole> roles = roleService.getRoles();

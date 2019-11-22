@@ -31,6 +31,11 @@ public class PageController {
     }
 
 
+    /**
+     * 登录接口 shiro角色权限配置
+     * @param user 传来的对象
+     * @return
+     */
     @RequestMapping("/login")
     public String login(TbUser user) {
         //添加用户认证信息
