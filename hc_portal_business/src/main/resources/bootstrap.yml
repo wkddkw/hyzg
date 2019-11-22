@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: port-business
+  profiles:
+        active: pro #对应的是某个(3种)环境的配置文件
+  cloud:
+    config:
+      discovery:
+        service-id: config-server #指定配置中心的服务名称
+        enabled: true
+      fail-fast: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:8761/eureka/
+#actuator设置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有端点,默认是info和health
+  endpoint:
+    health:
+      show-details: always
+
+mybatis: # 开启小驼峰
+  configuration:
+    map-underscore-to-camel-case: true
