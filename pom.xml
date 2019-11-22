@@ -18,6 +18,8 @@
         <module>hc_business</module>
         <module>hc_portal_server</module>
         <module>hc_commons</module>
+        <module>hc_sms</module>
+        <module>hc_upload</module>
     </modules>
 
     <!--想让本项目成为spring-boot项目,怎么办?-->
