@@ -13,4 +13,6 @@ public class TbPerm {
 
   private String perm;
 
+  private String comment;
+
 }
