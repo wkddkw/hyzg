@@ -9,7 +9,8 @@ zuul:
   retryable: true
   routes:
     perms-server: /perms/** # 将商品微服务映射到/item/**
-    search-service: /search/** #
+    port-business: /pbs/** # 将前台货源车源服务映射到/pbs/**
+#    search-service: /search/** #
 #    user-service: /user/**
 #    auth-service: /auth/**
 #  ignored-patterns: /upload/**
