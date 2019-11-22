@@ -1,8 +1,6 @@
 package sms.mq;
 
 import com.aliyuncs.CommonResponse;
-import com.hc.sms.config.SmsProperties;
-import com.hc.sms.smsUtils.SmsUtils;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -13,6 +11,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
+import sms.config.SmsProperties;
+import sms.smsUtils.SmsUtils;
 
 import java.util.Map;
 

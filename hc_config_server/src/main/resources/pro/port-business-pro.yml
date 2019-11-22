@@ -1,5 +1,5 @@
 server:
-  port: 8767
+  port: 8769
 
 #数据库的连接配置
 spring:

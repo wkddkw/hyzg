@@ -1,7 +1,8 @@
 package hc.controller;
 
 
-import com.huzg.hc.service.UploadService;
+
+import hc.service.UploadService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
