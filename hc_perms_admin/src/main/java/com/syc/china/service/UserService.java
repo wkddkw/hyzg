@@ -30,17 +30,17 @@ public class UserService {
 
     }
 
-    public List<TbUser> selectAllByCondition(String name, Integer phone, Integer idCard) {
+    public List<TbUser> selectAllByCondition(String name, String phone, String idCard) {
         Example example=new Example(TbUser.class);
         Example.Criteria criteria = example.createCriteria();
         if (!StringUtils.isBlank(name)){
             criteria.andLike("name","%"+name+"%");
         }
         if (phone!=null){
-            criteria.andEqualTo("phone",phone);
+            criteria.andEqualTo("phone",Integer.valueOf(phone));
         }
         if (idCard!=null){
-            criteria.andEqualTo("idCard",idCard);
+            criteria.andEqualTo("idCard",Integer.valueOf(idCard));
         }
         List<TbUser> tbUsers = userMapper.selectByExample(example);
         return tbUsers;

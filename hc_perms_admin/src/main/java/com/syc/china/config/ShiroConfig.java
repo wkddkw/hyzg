@@ -60,6 +60,7 @@ public class ShiroConfig {
         map.put("/index","anon");
         map.put("/toLogin","anon");
         map.put("/login","anon");
+        map.put("/user/*","anon");
         //登录
         shiroFilterFactoryBean.setLoginUrl("/toLogin");
         //首页

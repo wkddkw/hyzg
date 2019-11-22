@@ -4,3 +4,15 @@ server:
 #网关配置....
 #zuul:
 
+zuul:
+  prefix: /api # 添加路由前缀
+  retryable: true
+  routes:
+    perms-server: /perms/** # 将商品微服务映射到/item/**
+#    search-service: /search/** #
+#    user-service: /user/**
+#    auth-service: /auth/**
+#  ignored-patterns: /upload/**
+#  ignored-services: UPLOAD-SERVICE
+  add-host-header: true
+  sensitive-headers:

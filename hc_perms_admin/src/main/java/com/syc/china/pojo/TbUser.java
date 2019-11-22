@@ -5,6 +5,7 @@ import lombok.Data;
 import org.apache.shiro.authz.permission.InvalidPermissionStringException;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 
@@ -20,9 +21,9 @@ public class TbUser {
 
   private String password;
 
-  private Integer phone;
+  private String phone;
 
-  private Integer idCard;
+  private String idCard;
 
   private String linkMan;
 
@@ -44,11 +45,11 @@ public class TbUser {
 
   private String area;
 
-  private java.sql.Timestamp createTime;
+  private Date createTime;
 
-  private java.sql.Timestamp lastUpdateTime;
+  private Date lastUpdateTime;
 
-  private Integer isVip;
+  private Boolean isVip;
 
   @Transient
   private List<TbRole> roles;

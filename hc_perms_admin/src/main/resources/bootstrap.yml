@@ -9,6 +9,8 @@ spring:
         service-id: config-server #指定配置中心的服务名称
         enabled: true
       fail-fast: true
+  mvc:
+    date-format: yyyy-MM-dd
 
 eureka:
   client:
