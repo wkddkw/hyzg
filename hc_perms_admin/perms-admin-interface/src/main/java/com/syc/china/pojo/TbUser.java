@@ -2,7 +2,6 @@ package com.syc.china.pojo;
 
 
 import lombok.Data;
-import org.apache.shiro.authz.permission.InvalidPermissionStringException;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @data:2019/11/21
  */
 @Controller
-public class PageController {
+public class ShiroController {
 
     @RequestMapping("/toLogin")
     public String toLogin(){
